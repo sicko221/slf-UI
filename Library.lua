@@ -288,7 +288,7 @@ function UILibrary.Main(PrjName,HideKey)
 			end
 		end)
 	end
-	
+
 	function Tabs.Nofitication(Text)
 
 
@@ -340,7 +340,7 @@ function UILibrary.Main(PrjName,HideKey)
 		NofiticationButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 		NofiticationButton.TextSize = 16.000
 		NofiticationButton.TextTransparency = 1
-		
+
 		NofiticationButton.MouseButton1Click:Connect(function()
 			TweenService:Create(FadeBackgroundFrame,TweenInfo.new(0.3),{BackgroundTransparency = 1}):Play()
 			for i,v in next,Nofitication:GetDescendants() do
@@ -354,17 +354,17 @@ function UILibrary.Main(PrjName,HideKey)
 			wait(0.5)
 			Nofitication:Destroy()
 		end)
-		
-		
-		
+
+
+
 		NofiticationButton.MouseEnter:Connect(function()
 			TweenService:Create(NofiticationButton,TweenInfo.new(0.3),{BackgroundTransparency = 0.95}):Play()
 		end)
-		
+
 		NofiticationButton.MouseLeave:Connect(function()
 			TweenService:Create(NofiticationButton,TweenInfo.new(0.3),{BackgroundTransparency = 1}):Play()
 		end)
-		
+
 		NofiticationButton.MouseButton1Down:Connect(function()
 			TweenService:Create(NofiticationButton,TweenInfo.new(0.3),{BackgroundTransparency = 0.85}):Play()
 		end)
@@ -372,7 +372,7 @@ function UILibrary.Main(PrjName,HideKey)
 		NofiticationButtonCorner.CornerRadius = UDim.new(0, 5)
 		NofiticationButtonCorner.Name = "NofiticationButtonCorner"
 		NofiticationButtonCorner.Parent = NofiticationButton
-		
+
 		for i,v in next,Nofitication:GetDescendants() do
 			if v.ClassName == "TextButton" or v.ClassName == "TextLabel" then
 				TweenService:Create(v,TweenInfo.new(0.3),{BackgroundTransparency = 1}):Play()
@@ -885,7 +885,8 @@ function UILibrary.Main(PrjName,HideKey)
 
 				UpdateSlider(defvalue)
 
-				local IsSliding,Dragging = false
+				local IsSliding = false
+				local Dragging = false
 				local RealValue = defvalue
 				local value
 				local function move(Pressed)
